@@ -24,8 +24,7 @@ namespace Infraestructure.Services
 
         public async Task<Response<object>> GetEstudiantes()
         {
-            object list = new object();
-            list = _dbContext.Estudiantes.ToListAsync();
+            var list = await _dbContext.Estudiantes.ToListAsync();
             return new Response<object>(list);
         }
     }

@@ -38,5 +38,13 @@ namespace Host.Controllers
             return Ok(result);
         }
 
+        [HttpDelete("delete/{id}")]
+        public async Task<ActionResult<Response<int>>> DeleteEstudiante(int id)
+        {
+            var command = new EstudianteDeleteCommand { Id = id };
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
     }
 }

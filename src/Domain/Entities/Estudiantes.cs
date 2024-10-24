@@ -12,7 +12,7 @@ namespace Domain.Entities
     public class Estudiantes
     {
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
         public string Nombre {  get; set; }
         public int Edad {  get; set; }
         public string Correo {  get; set; }

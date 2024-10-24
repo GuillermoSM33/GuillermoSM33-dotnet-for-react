@@ -35,7 +35,9 @@ namespace Infraestructure.EventHandlers.Estudiantes
             var es = _mapper.Map<Domain.Entities.Estudiantes>(e);
             await _context.AddAsync(es);
             var req = await _context.SaveChangesAsync(cancellationToken);
-            return new Response<int>(es.id, "Registro exitoso");
+            return new Response<int>(es.Id, "Registro exitoso");
         }
+
+
     }
 }

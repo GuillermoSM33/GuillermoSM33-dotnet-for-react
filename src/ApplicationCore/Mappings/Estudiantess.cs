@@ -14,7 +14,7 @@ namespace ApplicationCore.Mappings
         public Estudiantess() 
         {
             CreateMap<EstudianteCreateCommand, Estudiantes>()
-                    .ForMember(x => x.id, y => y.Ignore());
+                    .ForMember(x => x.Id, y => y.Ignore());
         }
     }
 }
