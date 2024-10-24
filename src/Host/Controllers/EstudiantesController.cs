@@ -1,9 +1,8 @@
-﻿
-using ApplicationCore.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using MediatR;
-using ApplicationCore.Wrappers;
 using ApplicationCore.Commands;
+using ApplicationCore.Interfaces;
+using ApplicationCore.Wrappers;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Host.Controllers
 {
@@ -20,7 +19,7 @@ namespace Host.Controllers
         }
 
         //<sumary>
-        //Lista de usuarios - Get
+        //Lista de Usuarios - Get
         //</sumary>
 
         [Route("getEstudiantes")]
@@ -33,10 +32,19 @@ namespace Host.Controllers
         }
 
         [HttpPost("create")]
-        public async Task<ActionResult<Response<int>>> CreateEstudiantes(EstudianteCreateCommand command)
+        public async Task<ActionResult<Response<int>>> CreateEstudiante(EstudianteCreateCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);
         }
+
+        [HttpDelete("delete/{id}")]
+        public async Task<ActionResult<Response<int>>> DeleteEstudiante(int id)
+        {
+            var command = new EstudianteDeleteCommand { Id = id };
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
     }
 }
