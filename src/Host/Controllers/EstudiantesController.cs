@@ -1,4 +1,4 @@
-﻿using ApplicationCore.Commands;
+using ApplicationCore.Commands;
 using ApplicationCore.Interfaces;
 using ApplicationCore.Wrappers;
 using MediatR;

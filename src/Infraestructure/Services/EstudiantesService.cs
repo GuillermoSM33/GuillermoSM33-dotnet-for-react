@@ -1,4 +1,4 @@
-﻿using ApplicationCore.Interfaces;
+using ApplicationCore.Interfaces;
 using ApplicationCore.Wrappers;
 using AutoMapper;
 using Infraestructure.Persistence;
